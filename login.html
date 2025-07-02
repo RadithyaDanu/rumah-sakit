@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - PT. Cipta Hospital Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                <span>Cipta Hospital</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="services.html">Layanan</a></li>
+                <li><a href="schedule.html">Jadwal Dokter</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+                <li><a href="register.html">Daftar</a></li>
+                <li><a href="login.html" class="login-btn active">Login</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" onclick="toggleMobileMenu()">Beranda</a></li>
+                <li><a href="about.html" onclick="toggleMobileMenu()">Tentang</a></li>
+                <li><a href="services.html" onclick="toggleMobileMenu()">Layanan</a></li>
+                <li><a href="schedule.html" onclick="toggleMobileMenu()">Jadwal Dokter</a></li>
+                <li><a href="contact.html" onclick="toggleMobileMenu()">Kontak</a></li>
+                <li><a href="register.html" onclick="toggleMobileMenu()">Daftar</a></li>
+                <li><a href="login.html" onclick="toggleMobileMenu()">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="login-hero">
+        <div class="container">
+            <h1>Login Admin</h1>
+            <p>Masuk ke sistem administrasi rumah sakit</p>
+        </div>
+    </section>
+
+    <!-- Main Login Content -->
+    <main class="login-content">
+        <div class="container">
+            <div class="login-form">
+                <div class="form-container">
+                    <h2>Masuk ke Dashboard</h2>
+                    
+                    <!-- Alert placeholder for messages -->
+                    <div id="loginAlert" class="alert" style="display: none;"></div>
+                    
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="username">Username *</label>
+                            <input type="text" id="username" name="username" required placeholder="Masukkan username Anda">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required placeholder="Masukkan password Anda">
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" id="loginBtn">
+                                <span id="loginBtnText">Login</span>
+                                <span id="loginLoader" class="loading" style="display: none;"></span>
+                            </button>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 1rem;">
+                            <p>Belum memiliki akun? <a href="register.html" style="color: #4a90e2; text-decoration: none;">Daftar di sini</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PT. Cipta Hospital Indonesia</h3>
+                    <p>Rumah sakit terpercaya dengan pelayanan kesehatan berkualitas tinggi untuk seluruh keluarga Indonesia.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="https://www.instagram.com/radthdn?igsh=bDRremtodGpmZHE0" title="Instagram" target="_blank">📷</a>
+                        <a href="https://x.com/radthdn?t=3OPp5-OAbGDeT8H0NsWuDw&s=09" title="Twitter" target="_blank">🐦</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Layanan Unggulan</h4>
+                    <ul>
+                        <li><a href="services.html">Konsultasi Dokter</a></li>
+                        <li><a href="services.html">Medical Check Up</a></li>
+                        <li><a href="services.html">Operasi</a></li>
+                        <li><a href="services.html">Rawat Inap</a></li>
+                        <li><a href="services.html">Gawat Darurat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Informasi</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="schedule.html">Jadwal Dokter</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                        <li><a href="register.html">Registrasi Online</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak Kami</h4>
+                    <p>📍 Jl. Sehat Sejahtera No. 123<br>Jakarta Pusat, DKI Jakarta 10110</p>
+                    <p>📞 (021) 1234-5678</p>
+                    <p>📧 info@ciptahospital.co.id</p>
+                    <p>🕒 24 Jam / 7 Hari</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PT. Cipta Hospital Indonesia. Semua hak dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

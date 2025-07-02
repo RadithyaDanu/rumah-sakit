@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Dokter - PT. Cipta Hospital Indonesia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <span class="logo-icon">🏥</span>
+        PT. Cipta Hospital Indonesia
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="services.html">Layanan</a></li>
+        <li><a href="schedule.html" class="active">Jadwal Dokter</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+        <li><a href="register.html">Daftar</a></li>
+        <li><a href="login.html" class="login-btn">Masuk</a></li>
+      </ul>
+      <div class="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div class="mobile-nav-overlay" id="mobileNav">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="services.html">Layanan</a></li>
+        <li><a href="schedule.html">Jadwal Dokter</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+        <li><a href="register.html">Daftar</a></li>
+        <li><a href="login.html">Masuk</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="schedule-hero">
+    <div class="container">
+      <h1>Jadwal Dokter</h1>
+      <p>Lihat jadwal praktek dokter kami yang selalu update</p>
+    </div>
+  </section>
+
+  <main class="schedule-content">
+    <div class="container">
+      <!-- Filter -->
+      <div class="filter-container">
+        <div class="filter-row">
+          <div class="form-group">
+            <label for="poliFilter">Filter Poli</label>
+            <select id="poliFilter">
+              <option value="">Semua Poli</option>
+              <option value="umum">Umum</option>
+              <option value="jantung">Jantung</option>
+              <option value="anak">Anak</option>
+              <option value="mata">Mata</option>
+              <option value="gigi">Gigi</option>
+              <option value="kulit">Kulit</option>
+              <option value="saraf">Saraf</option>
+              <option value="kandungan">Kandungan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dokterFilter">Nama Dokter</label>
+            <input type="text" id="dokterFilter" placeholder="Cari nama dokter">
+          </div>
+          <div class="form-group">
+            <label for="hariFilter">Hari</label>
+            <select id="hariFilter">
+              <option value="">Semua Hari</option>
+              <option value="senin">Senin</option>
+              <option value="selasa">Selasa</option>
+              <option value="rabu">Rabu</option>
+              <option value="kamis">Kamis</option>
+              <option value="jumat">Jumat</option>
+              <option value="sabtu">Sabtu</option>
+              <option value="minggu">Minggu</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+<!-- Table -->
+      <div class="table-container">
+        <table id="scheduleTable">
+          <thead>
+            <tr>
+              <th>Nama Dokter</th>
+              <th>Poli</th>
+              <th>Hari</th>
+              <th>Jam</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleTableBody">
+            <tr>
+              <td>Dr. Ahmad Santoso, Sp.PD</td>
+              <td>Umum</td>
+              <td>Senin</td>
+              <td>08:00 - 12:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Siti Nurhaliza, Sp.JP</td>
+              <td>Jantung</td>
+              <td>Senin</td>
+              <td>13:00 - 17:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Bambang Wijaya, Sp.A</td>
+              <td>Anak</td>
+              <td>Senin</td>
+              <td>08:00 - 12:00</td>
+              <td><span class="status-busy">Penuh</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Lisa Permata, Sp.An</td>
+              <td>Anestesi</td>
+              <td>Senin</td>
+              <td>14:00 - 18:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Ahmad Santoso, Sp.PD</td>
+              <td>Umum</td>
+              <td>Selasa</td>
+              <td>08:00 - 12:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Rudi Hartono, Sp.OT</td>
+              <td>Ortopedi</td>
+              <td>Selasa</td>
+              <td>09:00 - 15:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Lisa Permata, Sp.An</td>
+              <td>Anestesi</td>
+              <td>Selasa</td>
+              <td>13:00 - 17:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Ahmad Santoso, Sp.PD</td>
+              <td>Umum</td>
+              <td>Rabu</td>
+              <td>08:00 - 12:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Siti Nurhaliza, Sp.JP</td>
+              <td>Jantung</td>
+              <td>Rabu</td>
+              <td>13:00 - 17:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Maya Indira, Sp.OG</td>
+              <td>Kandungan</td>
+              <td>Rabu</td>
+              <td>08:00 - 14:00</td>
+              <td><span class="status-busy">Penuh</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Bambang Wijaya, Sp.A</td>
+              <td>Anak</td>
+              <td>Kamis</td>
+              <td>08:00 - 12:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Lisa Permata, Sp.An</td>
+              <td>Anestesi</td>
+              <td>Kamis</td>
+              <td>14:00 - 18:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Ahmad Santoso, Sp.PD</td>
+              <td>Umum</td>
+              <td>Jumat</td>
+              <td>08:00 - 11:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Rudi Hartono, Sp.OT</td>
+              <td>Ortopedi</td>
+              <td>Jumat</td>
+              <td>09:00 - 13:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Lisa Permata, Sp.An</td>
+              <td>Anestesi</td>
+              <td>Sabtu</td>
+              <td>08:00 - 12:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Maya Indira, Sp.OG</td>
+              <td>Kandungan</td>
+              <td>Sabtu</td>
+              <td>08:00 - 14:00</td>
+              <td><span class="status-available">Tersedia</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Info Section -->
+      <div class="schedule-info">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Jam Operasional</h3>
+            <p>Senin - Jumat: 08:00 - 20:00</p>
+            <p>Sabtu: 08:00 - 16:00</p>
+            <p>Minggu: 08:00 - 12:00</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Reservasi</h3>
+            <p>Telepon: (021) 1234-5678</p>
+            <p>WhatsApp: 0812-3456-7890</p>
+            <p>Online: Daftar sekarang</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-info-circle"></i>
+            </div>
+            <h3>Catatan Penting</h3>
+            <p>• Datang 15 menit sebelum jadwal</p>
+            <p>• Bawa kartu identitas dan BPJS</p>
+            <p>• Jadwal dapat berubah sewaktu-waktu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+                    <h3>PT. Cipta Hospital Indonesia</h3>
+                    <p>Rumah sakit terpercaya dengan pelayanan kesehatan berkualitas tinggi untuk seluruh keluarga Indonesia.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="https://www.instagram.com/radthdn?igsh=bDRremtodGpmZHE0" title="Instagram" target="_blank">📷</a>
+                        <a href="https://x.com/radthdn?t=3OPp5-OAbGDeT8H0NsWuDw&s=09" title="Twitter" target="_blank">🐦</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                </div>
+        <div class="footer-section">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#">Rawat Jalan</a></li>
+            <li><a href="#">Rawat Inap</a></li>
+            <li><a href="#">IGD 24 Jam</a></li>
+            <li><a href="#">Medical Check Up</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Informasi</h4>
+          <ul>
+            <li><a href="#">Jadwal Dokter</a></li>
+            <li><a href="#">Tarif Pelayanan</a></li>
+            <li><a href="#">Fasilitas</a></li>
+            <li><a href="#">Karir</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Kontak</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Jl. Kesehatan No. 123, Jakarta</p>
+          <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+          <p><i class="fas fa-envelope"></i> info@ciptahospital.co.id</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 PT. Cipta Hospital Indonesia. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Data jadwal dokter
+    const scheduleData = [
+      { name: "Dr. Ahmad Santoso, Sp.PD", poli: "umum", day: "senin", time: "08:00 - 12:00", status: "available" },
+      { name: "Dr. Siti Nurhaliza, Sp.JP", poli: "jantung", day: "senin", time: "13:00 - 17:00", status: "available" },
+      { name: "Dr. Budi Setiawan, Sp.A", poli: "anak", day: "senin", time: "08:00 - 12:00", status: "busy" },
+      { name: "Dr. Maria Dewi, Sp.M", poli: "mata", day: "senin", time: "14:00 - 18:00", status: "available" },
+      { name: "Dr. Ahmad Santoso, Sp.PD", poli: "umum", day: "selasa", time: "08:00 - 12:00", status: "available" },
+      { name: "Dr. Andi Wijaya, drg", poli: "gigi", day: "selasa", time: "09:00 - 15:00", status: "available" },
+      { name: "Dr. Fatimah Zahra, Sp.KK", poli: "kulit", day: "selasa", time: "13:00 - 17:00", status: "available" },
+      { name: "Dr. Rizki Pratama, Sp.S", poli: "saraf", day: "rabu", time: "08:00 - 12:00", status: "available" },
+      { name: "Dr. Siti Nurhaliza, Sp.JP", poli: "jantung", day: "rabu", time: "13:00 - 17:00", status: "available" },
+      { name: "Dr. Linda Sari, Sp.OG", poli: "kandungan", day: "rabu", time: "08:00 - 14:00", status: "busy" },
+      { name: "Dr. Budi Setiawan, Sp.A", poli: "anak", day: "kamis", time: "08:00 - 12:00", status: "available" },
+      { name: "Dr. Maria Dewi, Sp.M", poli: "mata", day: "kamis", time: "14:00 - 18:00", status: "available" },
+      { name: "Dr. Ahmad Santoso, Sp.PD", poli: "umum", day: "jumat", time: "08:00 - 11:00", status: "available" },
+      { name: "Dr. Andi Wijaya, drg", poli: "gigi", day: "jumat", time: "09:00 - 13:00", status: "available" },
+      { name: "Dr. Fatimah Zahra, Sp.KK", poli: "kulit", day: "sabtu", time: "08:00 - 12:00", status: "available" },
+      { name: "Dr. Linda Sari, Sp.OG", poli: "kandungan", day: "sabtu", time: "08:00 - 14:00", status: "available" }
+    ];
+
+    // Filter functions
+    function filterSchedule() {
+      const poliFilter = document.getElementById('poliFilter').value.toLowerCase();
+      const dokterFilter = document.getElementById('dokterFilter').value.toLowerCase();
+      const hariFilter = document.getElementById('hariFilter').value.toLowerCase();
+
+      const filteredData = scheduleData.filter(schedule => {
+        const matchPoli = !poliFilter || schedule.poli === poliFilter;
+        const matchDokter = !dokterFilter || schedule.name.toLowerCase().includes(dokterFilter);
+        const matchHari = !hariFilter || schedule.day === hariFilter;
+        
+        return matchPoli && matchDokter && matchHari;
+      });
+
+      displaySchedule(filteredData);
+    }
+
+    function displaySchedule(data) {
+      const tbody = document.getElementById('scheduleTableBody');
+      tbody.innerHTML = '';
+
+      if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #666;">Tidak ada jadwal yang ditemukan</td></tr>';
+        return;
+      }
+
+      data.forEach(schedule => {
+        const row = document.createElement('tr');
+        const statusClass = schedule.status === 'available' ? 'status-available' : 'status-busy';
+        const statusText = schedule.status === 'available' ? 'Tersedia' : 'Penuh';
+        
+        row.innerHTML = `
+          <td>${schedule.name}</td>
+          <td>${schedule.poli.charAt(0).toUpperCase() + schedule.poli.slice(1)}</td>
+          <td>${schedule.day.charAt(0).toUpperCase() + schedule.day.slice(1)}</td>
+          <td>${schedule.time}</td>
+          <td><span class="${statusClass}">${statusText}</span></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('poliFilter').addEventListener('change', filterSchedule);
+      document.getElementById('dokterFilter').addEventListener('input', filterSchedule);
+      document.getElementById('hariFilter').addEventListener('change', filterSchedule);
+      
+      // Initial display
+      displaySchedule(scheduleData);
+    });
+  </script>
+
+  <style>
+    /* Additional styles for schedule page */
+    .status-available {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .status-busy {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .schedule-info {
+      margin-top: 3rem;
+      padding: 2rem 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .info-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-icon {
+      font-size: 3rem;
+      color: #4a90e2;
+      margin-bottom: 1rem;
+    }
+
+    .info-card h3 {
+      color: #2c5aa0;
+      margin-bottom: 1rem;
+    }
+
+    .info-card p {
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .table-container {
+        overflow-x: auto;
+      }
+    }
+  </style>
+</body>
+</html>

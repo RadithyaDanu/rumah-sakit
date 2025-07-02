@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - PT. Cipta Hospital Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header dan Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                PT. Cipta Hospital Indonesia
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="services.html" class="active">Layanan</a></li>
+                <li><a href="schedule.html">Jadwal Dokter</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+                <li><a href="register.html">Daftar</a></li>
+                <li><a href="login.html" class="login-btn">Masuk</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="services.html">Layanan</a></li>
+            <li><a href="register.html">Pendaftaran Online</a></li>
+            <li><a href="schedule.html">Jadwal Dokter</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+            <li><a href="login.html">Login Admin</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Layanan Medis Terpadu</h1>
+            <p>Pelayanan kesehatan komprehensif dengan standar internasional untuk seluruh keluarga</p>
+        </div>
+    </section>
+
+    <!-- Services Content -->
+    <main class="services-list">
+        <div class="container">
+            <!-- Filter Section -->
+            <section class="filter-container">
+                <h2>Cari Layanan</h2>
+                <div class="filter-row">
+                    <div class="form-group">
+                        <label for="categoryFilter">Kategori</label>
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="all">Semua Kategori</option>
+                            <option value="umum">Pelayanan Umum</option>
+                            <option value="spesialis">Spesialis</option>
+                            <option value="darurat">Gawat Darurat</option>
+                            <option value="penunjang">Penunjang Medis</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="searchService">Pencarian</label>
+                        <input type="text" id="searchService" placeholder="Cari nama layanan...">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pelayanan Umum -->
+            <section class="service-category" data-category="umum">
+                <h3>Pelayanan Umum</h3>
+                <div class="service-items">
+                    <div class="service-item" onclick="showServiceDetail('pelayanan-umum')">
+                        <div class="service-icon">🩺</div>
+                        <h4>Pelayanan Umum</h4>
+                        <p>Pemeriksaan kesehatan rutin dan konsultasi medis dasar dengan dokter umum berpengalaman.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Spesialis -->
+            <section class="service-category" data-category="spesialis">
+                <h3>Pelayanan Spesialis</h3>
+                <div class="service-items">
+                    <div class="service-item" onclick="showServiceDetail('spesialis-jantung')">
+                        <div class="service-icon">❤️</div>
+                        <h4>Spesialis Jantung</h4>
+                        <p>Diagnosis dan pengobatan penyakit kardiovaskular dengan teknologi terdepan.</p>
+                    </div>
+                    <div class="service-item" onclick="showServiceDetail('spesialis-anak')">
+                        <div class="service-icon">👶</div>
+                        <h4>Spesialis Anak</h4>
+                        <p>Perawatan kesehatan khusus untuk bayi, anak, dan remaja dengan pendekatan holistik.</p>
+                    </div>
+                    <div class="service-item" onclick="showServiceDetail('obstetri-ginekologi')">
+                        <div class="service-icon">🤱</div>
+                        <h4>Obstetri & Ginekologi</h4>
+                        <p>Pelayanan kehamilan, persalinan, dan kesehatan wanita yang komprehensif.</p>
+                    </div>
+                    <div class="service-item" onclick="showServiceDetail('ortopedi')">
+                        <div class="service-icon">🦴</div>
+                        <h4>Ortopedi & Traumatologi</h4>
+                        <p>Penanganan gangguan tulang, sendi, dan cedera dengan teknologi modern.</p>
+                    </div>
+                    <div class="service-item" onclick="showServiceDetail('penyakit-dalam')">
+                        <div class="service-icon">🔬</div>
+                        <h4>Penyakit Dalam</h4>
+                        <p>Diagnosis dan pengobatan penyakit internal dewasa oleh spesialis berpengalaman.</p>
+                    </div>
+                    <div class="service-item" onclick="showServiceDetail('rehabilitasi-medik')">
+                        <div class="service-icon">🏃‍♂️</div>
+                        <h4>Rehabilitasi Medik</h4>
+                        <p>Terapi fisik dan pemulihan fungsi tubuh dengan pendekatan multidisiplin.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gawat Darurat -->
+            <section class="service-category" data-category="darurat">
+                <h3>Pelayanan Gawat Darurat</h3>
+                <div class="service-items">
+                    <div class="service-item" onclick="showServiceDetail('ugd')">
+                        <div class="service-icon">🚨</div>
+                        <h4>Unit Gawat Darurat</h4>
+                        <p>Pelayanan emergensi medis 24 jam non-stop dengan tim medis siaga.</p>
+                    </div>
+                    <div class="service-item" onclick="showServiceDetail('icu')">
+                        <div class="service-icon">⚕️</div>
+                        <h4>ICU & NICU</h4>
+                        <p>Unit perawatan intensif dengan monitoring 24 jam dan peralatan canggih.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Penunjang Medis -->
+            <section class="service-category" data-category="penunjang">
+                <h3>Penunjang Medis</h3>
+                <div class="service-items">
+                    <div class="service-item" onclick="showServiceDetail('laboratorium')">
+                        <div class="service-icon">🧪</div>
+                        <h4>Laboratorium</h4>
+                        <p>Pemeriksaan laboratorium lengkap dengan teknologi modern dan hasil akurat.</p>
+                    </div>
+                    <div class="service-item" onclick="showServiceDetail('radiologi')">
+                        <div class="service-icon">📷</div>
+                        <h4>Radiologi</h4>
+                        <p>Pemeriksaan pencitraan medis dengan peralatan canggih dan radiolog berpengalaman.</p>
+                    </div>
+                    <div class="service-item" onclick="showServiceDetail('farmasi')">
+                        <div class="service-icon">💊</div>
+                        <h4>Farmasi</h4>
+                        <p>Apotek 24 jam dengan konsultasi farmasis profesional dan obat berkualitas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2>Butuh Konsultasi Lebih Lanjut?</h2>
+                        <p>Tim medis kami siap membantu menentukan layanan yang tepat untuk kebutuhan kesehatan Anda</p>
+                        <div class="cta-buttons">
+                            <a href="register.html" class="btn btn-primary">Daftar Sekarang</a>
+                            <a href="contact.html" class="btn btn-secondary">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal Detail Layanan -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeServiceModal()">&times;</span>
+            <div id="modalContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PT. Cipta Hospital Indonesia</h3>
+                    <p>Rumah sakit terpercaya dengan pelayanan kesehatan berkualitas tinggi untuk seluruh keluarga Indonesia.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="https://www.instagram.com/radthdn?igsh=bDRremtodGpmZHE0" title="Instagram" target="_blank">📷</a>
+                        <a href="https://x.com/radthdn?t=3OPp5-OAbGDeT8H0NsWuDw&s=09" title="Twitter" target="_blank">🐦</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Layanan Kami</h4>
+                    <ul>
+                        <li><a href="services.html">Pelayanan Umum</a></li>
+                        <li><a href="services.html">Spesialis Jantung</a></li>
+                        <li><a href="services.html">Spesialis Anak</a></li>
+                        <li><a href="services.html">Obstetri & Ginekologi</a></li>
+                        <li><a href="services.html">Gawat Darurat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Informasi</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="schedule.html">Jadwal Dokter</a></li>
+                        <li><a href="register.html">Pendaftaran Online</a></li>
+                        <li><a href="contact.html">Kontak Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p>📍 Jl. Kesehatan No. 123, Jakarta Pusat</p>
+                    <p>📞 (021) 123-4567</p>
+                    <p>📱 +62 812-3456-7890</p>
+                    <p>✉️ info@ciptahospital.co.id</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PT. Cipta Hospital Indonesia. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileNavOverlay');
+            overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Service filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryFilter = document.getElementById('categoryFilter');
+            const searchInput = document.getElementById('searchService');
+            const serviceCategories = document.querySelectorAll('.service-category');
+
+            categoryFilter.addEventListener('change', filterServices);
+            searchInput.addEventListener('input', filterServices);
+
+            function filterServices() {
+                const selectedCategory = categoryFilter.value;
+                const searchTerm = searchInput.value.toLowerCase();
+
+                serviceCategories.forEach(category => {
+                    const categoryType = category.getAttribute('data-category');
+                    const serviceItems = category.querySelectorAll('.service-item');
+                    let hasVisibleItems = false;
+
+                    // Show/hide based on category
+                    if (selectedCategory === 'all' || selectedCategory === categoryType) {
+                        serviceItems.forEach(item => {
+                            const serviceName = item.querySelector('h4').textContent.toLowerCase();
+                            const serviceDesc = item.querySelector('p').textContent.toLowerCase();
+                            
+                            if (searchTerm === '' || serviceName.includes(searchTerm) || serviceDesc.includes(searchTerm)) {
+                                item.style.display = 'block';
+                                hasVisibleItems = true;
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                        category.style.display = hasVisibleItems ? 'block' : 'none';
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+            }
+        });
+
+        // Service detail modal
+        const serviceDetails = {
+            'pelayanan-umum': {
+                title: 'Pelayanan Umum',
+                icon: '🩺',
+                description: 'Pelayanan kesehatan dasar dengan dokter umum berpengalaman',
+                services: [
+                    'Konsultasi dokter umum',
+                    'Pemeriksaan kesehatan berkala',
+                    'Pengobatan penyakit ringan',
+                    'Vaksinasi dan imunisasi',
+                    'Medical check up'
+                ],
+                hours: 'Senin-Sabtu 08:00-20:00, Minggu 08:00-16:00'
+            },
+            'spesialis-jantung': {
+                title: 'Spesialis Jantung',
+                icon: '❤️',
+                description: 'Diagnosis dan pengobatan penyakit kardiovaskular',
+                services: [
+                    'Konsultasi kardiologi',
+                    'EKG dan Echocardiography',
+                    'Kateterisasi jantung',
+                    'Pemasangan ring jantung',
+                    'Rehabilitasi jantung'
+                ],
+                hours: 'Senin-Jumat 08:00-16:00, Sabtu 08:00-12:00'
+            },
+            'spesialis-anak': {
+                title: 'Spesialis Anak',
+                icon: '👶',
+                description: 'Perawatan kesehatan khusus untuk bayi, anak, dan remaja',
+                services: [
+                    'Konsultasi tumbuh kembang',
+                    'Imunisasi lengkap',
+                    'Pengobatan penyakit anak',
+                    'Konseling gizi anak',
+                    'Deteksi dini gangguan perkembangan'
+                ],
+                hours: 'Senin-Sabtu 08:00-16:00'
+            },
+            'obstetri-ginekologi': {
+                title: 'Obstetri & Ginekologi',
+                icon: '🤱',
+                description: 'Pelayanan kehamilan, persalinan, dan kesehatan wanita',
+                services: [
+                    'Pemeriksaan kehamilan (ANC)',
+                    'Persalinan normal dan caesar',
+                    'USG 4D',
+                    'Konsultasi KB dan reproduksi',
+                    'Operasi ginekologi'
+                ],
+                hours: 'Senin-Sabtu 08:00-16:00, On-call 24 jam'
+            },
+            'ortopedi': {
+                title: 'Ortopedi & Traumatologi',
+                icon: '🦴',
+                description: 'Penanganan gangguan tulang, sendi, dan cedera',
+                services: [
+                    'Konsultasi nyeri tulang dan sendi',
+                    'Operasi patah tulang',
+                    'Artroskopi',
+                    'Penggantian sendi',
+                    'Fisioterapi'
+                ],
+                hours: 'Senin-Jumat 08:00-16:00, Sabtu 08:00-12:00'
+            },
+            'penyakit-dalam': {
+                title: 'Penyakit Dalam',
+                icon: '🔬',
+                description: 'Diagnosis dan pengobatan penyakit internal dewasa',
+                services: [
+                    'Penanganan diabetes',
+                    'Pengobatan hipertensi',
+                    'Penyakit ginjal',
+                    'Gangguan pencernaan',
+                    'Penyakit autoimun'
+                ],
+                hours: 'Senin-Sabtu 08:00-16:00'
+            },
+            'ugd': {
+                title: 'Unit Gawat Darurat',
+                icon: '🚨',
+                description: 'Pelayanan emergensi medis 24 jam non-stop',
+                services: [
+                    'Penanganan trauma',
+                    'Serangan jantung',
+                    'Stroke akut',
+                    'Keracunan',
+                    'Ambulans siaga'
+                ],
+                hours: '24 Jam Non-Stop'
+            },
+            'icu': {
+                title: 'ICU & NICU',
+                icon: '⚕️',
+                description: 'Unit perawatan intensif dengan monitoring 24 jam',
+                services: [
+                    'Perawatan pasien kritis',
+                    'Ventilator dan life support',
+                    'Monitoring jantung',
+                    'NICU untuk bayi prematur',
+                    'Tim medis khusus ICU'
+                ],
+                hours: '24 Jam dengan Tim Khusus'
+            },
+            'laboratorium': {
+                title: 'Laboratorium',
+                icon: '🧪',
+                description: 'Pemeriksaan laboratorium lengkap dengan teknologi modern',
+                services: [
+                    'Pemeriksaan darah lengkap',
+                    'Tes urine dan feses',
+                    'Pemeriksaan hormon',
+                    'Mikrobiologi',
+                    'Patologi anatomi'
+                ],
+                hours: 'Senin-Sabtu 06:00-18:00, Minggu 07:00-14:00'
+            },
+            'radiologi': {
+                title: 'Radiologi',
+                icon: '📷',
+                description: 'Pemeriksaan pencitraan medis dengan peralatan canggih',
+                services: [
+                    'Rontgen digital',
+                    'CT Scan',
+                    'MRI',
+                    'USG Doppler',
+                    'Mammografi'
+                ],
+                hours: 'Senin-Sabtu 08:00-20:00, Minggu 08:00-16:00'
+            },
+            'farmasi': {
+                title: 'Farmasi',
+                icon: '💊',
+                description: 'Apotek 24 jam dengan konsultasi farmasis profesional',
+                services: [
+                    'Obat resep dokter',
+                    'Obat bebas dan bebas terbatas',
+                    'Konsultasi obat',
+                    'Pemeriksaan tekanan darah',
+                    'Cek gula darah'
+                ],
+                hours: '24 Jam Non-Stop'
+            },
+            'rehabilitasi-medik': {
+                title: 'Rehabilitasi Medik',
+                icon: '🏃‍♂️',
+                description: 'Terapi fisik dan pemulihan fungsi tubuh',
+                services: [
+                    'Fisioterapi',
+                    'Terapi okupasi',
+                    'Terapi wicara',
+                    'Akupunktur',
+                    'Massage terapi'
+                ],
+                hours: 'Senin-Sabtu 08:00-16:00'
+            }
+        };
+
+        function showServiceDetail(serviceId) {
+            const modal = document.getElementById('serviceModal');
+            const modalContent = document.getElementById('modalContent');
+            const service = serviceDetails[serviceId];
+
+            if (service) {
+                modalContent.innerHTML = `
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">${service.icon}</div>
+                        <h2 style="color: #2c5aa0; margin-bottom: 1rem;">${service.title}</h2>
+                        <p style="color: #666; font-size: 1.1rem;">${service.description}</p>
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #2c5aa0; margin-bottom: 1rem;">Layanan yang Tersedia:</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            ${service.services.map(item => `<li style="padding: 0.5rem 0; border-bottom: 1px solid #e9ecef;"><span style="color: #4a90e2;">✓</span> ${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4a90e2;">
+                        <h4 style="color: #2c5aa0; margin-bottom: 0.5rem;">Jam Operasional:</h4>
+                        <p style="color: #333; font-weight: 600;">${service.hours}</p>
+                    </div>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="register.html" class="btn btn-primary">Daftar Sekarang</a>
+                    </div>
+                `;
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeServiceModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak Kami - PT. Cipta Hospital Indonesia</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <span class="logo-icon">🏥</span>
+        PT. Cipta Hospital Indonesia
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="services.html">Layanan</a></li>
+        <li><a href="schedule.html">Jadwal Dokter</a></li>
+        <li><a href="contact.html" class="active">Kontak</a></li>
+        <li><a href="register.html">Daftar</a></li>
+        <li><a href="login.html" class="login-btn">Masuk</a></li>
+      </ul>
+      <div class="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div class="mobile-nav-overlay" id="mobileNav">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="services.html">Layanan</a></li>
+        <li><a href="schedule.html">Jadwal Dokter</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+        <li><a href="register.html">Daftar</a></li>
+        <li><a href="login.html">Masuk</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1>Kontak Kami</h1>
+      <p>Hubungi kami untuk informasi dan layanan lebih lanjut</p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <main class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h2>Informasi Kontak</h2>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <strong>Alamat</strong>
+              <p>Jl. Kesehatan No. 123<br>Jakarta Pusat, DKI Jakarta 10110<br>Indonesia</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <strong>Telepon</strong>
+              <p>Utama: (021) 1234-5678<br>IGD: (021) 1234-5679<br>Ambulance: (021) 1234-5680</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <p>info@ciptahospital.co.id<br>appointment@ciptahospital.co.id<br>emergency@ciptahospital.co.id</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+              <strong>WhatsApp</strong>
+              <p>Konsultasi: 0812-3456-7890<br>Reservasi: 0812-3456-7891</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <strong>Jam Operasional</strong>
+              <p>Senin - Jumat: 08:00 - 20:00<br>Sabtu: 08:00 - 16:00<br>Minggu: 08:00 - 12:00<br>IGD: 24 Jam</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contactForm" class="form-container">
+          <h2>Kirim Pesan</h2>
+          <div id="alertContainer"></div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactNama">Nama Lengkap *</label>
+              <input type="text" id="contactNama" name="nama" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email *</label>
+              <input type="email" id="contactEmail" name="email" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactPhone">Nomor Telepon</label>
+              <input type="tel" id="contactPhone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subjek *</label>
+              <select id="contactSubject" name="subject" required>
+                <option value="">Pilih Subjek</option>
+                <option value="informasi">Informasi Umum</option>
+                <option value="appointment">Janji Temu</option>
+                <option value="complaint">Keluhan/Saran</option>
+                <option value="emergency">Darurat</option>
+                <option value="other">Lainnya</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="contactMessage">Pesan *</label>
+            <textarea id="contactMessage" name="message" rows="5" required placeholder="Tulis pesan Anda di sini..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="agreeTerms" required>
+              Saya setuju dengan <a href="#" style="color: #4a90e2;">syarat dan ketentuan</a> yang berlaku
+            </label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Kirim Pesan
+          </button>
+        </form>
+      </div>
+
+      <!-- Map Container -->
+      <div class="map-container">
+        <div style="text-align: center; color: #4a90e2;">
+          <i class="fas fa-map-marked-alt" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+          <h3>Lokasi Rumah Sakit</h3>
+          <p>Jl. Kesehatan No. 123, Jakarta Pusat</p>
+        </div>
+      </div>
+
+      <!-- Additional Contact Options -->
+      <div class="contact-options">
+        <h2>Cara Lain Menghubungi Kami</h2>
+        <div class="options-grid">
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="fas fa-calendar-plus"></i>
+            </div>
+            <h3>Reservasi Online</h3>
+            <p>Buat janji temu dengan dokter melalui sistem online kami</p>
+            <a href="register.html" class="btn btn-outline">Daftar Sekarang</a>
+          </div>
+          
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Call Center</h3>
+            <p>Hubungi call center kami untuk informasi dan bantuan</p>
+            <a href="tel:02112345678" class="btn btn-outline">Hubungi Sekarang</a>
+          </div>
+          
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Chat langsung dengan customer service kami via WhatsApp</p>
+            <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank">Chat WhatsApp</a>
+          </div>
+          
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="fas fa-ambulance"></i>
+            </div>
+            <h3>Layanan Darurat</h3>
+            <p>Untuk kondisi darurat, hubungi nomor emergency kami</p>
+            <a href="tel:02112345679" class="btn btn-primary">IGD 24 Jam</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+            <h3>PT. Cipta Hospital Indonesia</h3>
+            <p>Rumah sakit terpercaya dengan pelayanan kesehatan berkualitas tinggi untuk seluruh keluarga Indonesia.</p>
+            <div class="social-links">
+                <a href="#" title="Facebook">📘</a>
+                <a href="https://www.instagram.com/radthdn?igsh=bDRremtodGpmZHE0" title="Instagram" target="_blank">📷</a>
+                <a href="https://x.com/radthdn?t=3OPp5-OAbGDeT8H0NsWuDw&s=09" title="Twitter" target="_blank">🐦</a>
+                <a href="#" title="YouTube">📺</a>
+            </div>
+        </div>
+        <div class="footer-section">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#">Rawat Jalan</a></li>
+            <li><a href="#">Rawat Inap</a></li>
+            <li><a href="#">IGD 24 Jam</a></li>
+            <li><a href="#">Medical Check Up</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Informasi</h4>
+          <ul>
+            <li><a href="#">Jadwal Dokter</a></li>
+            <li><a href="#">Tarif Pelayanan</a></li>
+            <li><a href="#">Fasilitas</a></li>
+            <li><a href="#">Karir</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Kontak</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Jl. Kesehatan No. 123, Jakarta</p>
+          <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+          <p><i class="fas fa-envelope"></i> info@ciptahospital.co.id</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 PT. Cipta Hospital Indonesia. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const alertContainer = document.getElementById('alertContainer');
+      
+      // Simulate form submission
+      const submitButton = this.querySelector('button[type="submit"]');
+      const originalText = submitButton.innerHTML;
+      
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+      submitButton.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        alertContainer.innerHTML = `
+          <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            Pesan Anda berhasil dikirim! Kami akan merespons dalam 24 jam.
+          </div>
+        `;
+        
+        // Reset form
+        this.reset();
+        
+        // Reset button
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+        
+        // Scroll to alert
+        alertContainer.scrollIntoView({ behavior: 'smooth' });
+        
+        // Auto hide alert after 5 seconds
+        setTimeout(() => {
+          alertContainer.innerHTML = '';
+        }, 5000);
+        
+      }, 2000);
+    });
+
+    // Form validation enhancement
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactForm');
+      const inputs = form.querySelectorAll('input, select, textarea');
+      
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+          if (this.classList.contains('error')) {
+            validateField(this);
+          }
+        });
+      });
+      
+      function validateField(field) {
+        const value = field.value.trim();
+        const isRequired = field.hasAttribute('required');
+        
+        // Remove existing error styling
+        field.classList.remove('error');
+        const existingError = field.parentNode.querySelector('.error-message');
+        if (existingError) {
+          existingError.remove();
+        }
+        
+        // Validate required fields
+        if (isRequired && !value) {
+          showFieldError(field, 'Field ini wajib diisi');
+          return false;
+        }
+        
+        // Validate email
+        if (field.type === 'email' && value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            showFieldError(field, 'Format email tidak valid');
+            return false;
+          }
+        }
+        
+        // Validate phone
+        if (field.type === 'tel' && value) {
+          const phoneRegex = /^[\d\-\+\(\)\s]+$/;
+          if (!phoneRegex.test(value)) {
+            showFieldError(field, 'Format nomor telepon tidak valid');
+            return false;
+          }
+        }
+        
+        return true;
+      }
+      
+      function showFieldError(field, message) {
+        field.classList.add('error');
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.color = '#dc3545';
+        errorDiv.style.fontSize = '0.875rem';
+        errorDiv.style.marginTop = '0.25rem';
+        errorDiv.textContent = message;
+        field.parentNode.appendChild(errorDiv);
+      }
+    });
+  </script>
+
+  <style>
+    /* Additional styles for contact page */
+    .contact-options {
+      margin-top: 4rem;
+      padding: 3rem 0;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .contact-options h2 {
+      text-align: center;
+      color: #2c5aa0;
+      margin-bottom: 3rem;
+      font-size: 2.2rem;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .option-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .option-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .option-icon {
+      font-size: 3rem;
+      color: #4a90e2;
+      margin-bottom: 1rem;
+    }
+
+    .option-card h3 {
+      color: #2c5aa0;
+      margin-bottom: 1rem;
+    }
+
+    .option-card p {
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .option-card .btn {
+      margin-top: 1rem;
+    }
+
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error {
+      border-color: #dc3545;
+    }
+
+    .alert {
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border-color: #28a745;
+    }
+
+    .alert-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border-color: #dc3545;
+    }
+
+    .contact-item {
+      margin-bottom: 2rem;
+    }
+
+    .contact-item strong {
+      color: #2c5aa0;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-options {
+        margin-top: 2rem;
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</body>
+</html>
